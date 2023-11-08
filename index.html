@@ -100,11 +100,11 @@
     <section id="cart">
         <div class="card">
             <div class="card-header">
-                <h2 class="position-relative">Your purchaces <span class="cart position-absolute" style="right: 0"><i class="fa fa-shopping-cart"></i><sup class="btn p-1 btn-outline-primary" id="itemsCount">0</sup></span></h2>
+                <h2 class="position-relative">Your purchaces <span class="cart position-absolute" style="right: 1em;"><i class="fa fa-shopping-cart text-success"></i><sup style=" font-size: 14px; margin-top: -18px" class="btn py-0 px-2 btn-outline-primary" id="itemsCount">0</sup></span></h2>
             </div>
             <div class="card-body">
                 <div class="content">
-
+                    <div id="placeholder" class=" alert alert-info m-0 fs-4 ">No Items Selected Yet</div>
                 </div>
             </div>
             <div class="card-footer">
@@ -129,6 +129,7 @@
         var collectBtns = document.querySelectorAll('.product .card .collect')
         collectBtns.forEach(btn=>{
             btn.onclick=function () {
+                document.querySelectorAll('.product.cart').style.display='none'
                 cart.innerHTML += createNewElement (btn.getAttribute('data-product-id'), btn.getAttribute('data-product-pic'), btn.getAttribute('data-product-price'))
             }
         })
