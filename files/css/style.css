@@ -1,0 +1,107 @@
+body {
+    position: relative;
+    overflow-x: hidden;
+    height: 3000px;
+    font-family: cairo;
+}
+
+:root {
+    --main-color: #1c7ed6;
+    --main-color-o: #1c7ed655;
+    --light-grey: #ccc;
+    --light: #fff;
+}
+
+section.allProducts .content {
+    height: 100%;
+    width: 90vw !important;
+    margin: 50px auto;
+}
+
+.card-title {
+    color: #db0075;
+}
+.card-text {
+    color: #17E6E6;
+}
+.list-inline-item {
+    color: #ffd700
+}
+.price {
+    color: #9B1B30;
+}
+.btn-pink {
+    background-color: #fcb2b2 !important;
+}
+
+.product {
+    transition: all .5s ease-in-out
+}
+
+.card div.img {
+    width: 100%;
+    height: 200px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.card h5 {
+    font-size: 20px;
+    color: #777;
+}
+
+.card h5 span del {
+    font-size: 16px;
+    display: inline-block;
+    color: #733;
+    padding: 3px 8px;
+    border: 1px dashed;
+}
+
+.card h5 span b {
+    font-size: 20px;
+    display: inline-block;
+    color: #373;
+    padding: 3px 8px;
+}
+
+section#cart {
+    margin-left: 5vw;
+    padding: 1em;
+    border: 1px solid #777;
+}
+
+section#cart .card {
+    width: 550px !important;
+    display: grid;
+    gap: 1em;
+}
+
+
+section#cart .content .product-in-cart {
+    display: grid;
+    grid-template-columns: 70px 300px 120px;
+    border: 1px solid #777;
+    background-color: #ccc;
+    height: 60px;
+    overflow: hidden;
+}
+section#cart .content .product-in-cart .icon {
+    width: 70px;
+    padding: 4px;
+}
+section#cart .content .product-in-cart .icon img {
+    width: 60px;
+    height: 50px;
+}
+
+section#cart .content .product-in-cart div.name h4 {
+    font: 800 24px /60px Cairo;
+    padding: 0 1rem; 
+}
+
+section#cart .content .product-in-cart div.price {
+    font: 800 18px /60px Cairo;
+    padding: 0 1rem; 
+    text-align: right;
+}
