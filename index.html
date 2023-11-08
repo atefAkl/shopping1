@@ -13,6 +13,11 @@
 <body>
     <section class="allProducts w-100" id="">
         <div class="content">
+
+            <div class="pointers position-relative">
+                <button class="position-absolute" style=" " type="button" id="left"><i class="fa fa-arrow-left"></i></button>
+                <button class="position-absolute" style="right: 2em; top: 200px; font-size: 2em; z-index:9; padding: 0.5em 1em; background-color: #777a; " type="button" id="right"><i class="fa fa-arrow-right"></i></button>
+            </div>
             <div class="d-grid gap-3" id="products" style="grid-template-columns: repeat(6, 350px); overflow: hidden">
                 <div class="product p-3 m-1 text-white fs-5 d-inlin-block" style="width: 350px; background-color: #999; ">
                     <div class="card w-100 px-3">
@@ -100,7 +105,11 @@
     <section id="cart">
         <div class="card">
             <div class="card-header">
-                <h2 class="position-relative">Your purchaces <span class="cart position-absolute" style="right: 1em;"><i class="fa fa-shopping-cart text-success"></i><sup style=" font-size: 14px; margin-top: -18px" class="btn py-0 px-2 btn-outline-primary" id="itemsCount">0</sup></span></h2>
+                <h2 class="position-relative">Your purchaces 
+                    <span class="cart position-absolute" style="right: 1em;">
+                        <i class="fa fa-shopping-cart text-success"></i>
+                        <sup style=" font-size: 14px; margin-top: -18px" class="btn py-0 px-2 btn-outline-primary" 
+                        id="itemsCount">0</sup></span></h2>
             </div>
             <div class="card-body">
                 <div class="content">
@@ -127,29 +136,31 @@
         var totalPrice = 0
         var cart = document.querySelector('#cart .content')
         var collectBtns = document.querySelectorAll('.product .card .collect')
+        var countOfItems = 0
         collectBtns.forEach(btn=>{
             btn.onclick=function () {
-                document.querySelectorAll('.product.cart').style.display='none'
+                countOfItems++
+                totalPrice += +(btn.getAttribute('data-product-price'))
+                document.querySelector('#placeholder').style.display='none'
+                document.querySelector('#itemsCount').innerHTML = countOfItems
+                document.querySelector('#totalPriceDiv').innerHTML = totalPrice
                 cart.innerHTML += createNewElement (btn.getAttribute('data-product-id'), btn.getAttribute('data-product-pic'), btn.getAttribute('data-product-price'))
             }
         })
 
 
-       
-        setInterval(function () {
-            productsParent.onmouseover = function () {
-                isPaused = true
-            }
-            productsParent.onmouseout = function () {
-                isPaused = false
-            }
-            if (!isPaused) {
-                let p1 = products[0]
-            productsParent.appendChild(p1)
+
+
+        document.getElementById('left').onclick=function () {
+            let p1 = products[0]
             p1.remove
-            }
-            
-        }, 3000)
+            productsParent.appendChild(p1)
+       }
+       document.getElementById('right').onclick=function () {
+            let p1 = products[products.length-1]
+            p1.remove
+            productsParent.prepend(p1)
+       }
 
 
 

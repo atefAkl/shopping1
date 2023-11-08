@@ -46,8 +46,9 @@ section.allProducts .content {
     background-position: center;
 }
 .card h5 {
-    font-size: 20px;
-    color: #777;
+    font-weight: bold;
+    font-size: 28px;
+    color: #555;
 }
 
 .card h5 span del {
@@ -104,4 +105,27 @@ section#cart .content .product-in-cart div.price {
     font: 800 18px /60px Cairo;
     padding: 0 1rem; 
     text-align: right;
+}
+
+.pointers #right,
+.pointers #left {
+    border-radius: 0.5em;
+    top: 200px; 
+    font-size: 2em; 
+    z-index:9; 
+    padding: 0.5em 1em;
+    opacity: 0.2;
+    transition: all 0.3s ease;
+}
+.pointers #left {
+    left: 2em; 
+}
+.pointers #left {
+    right: 2em; 
+}
+
+.pointers button#left:hover,
+.pointers button#right:hover {
+    opacity: 0.6;
+    box-shadow: 0 0 10px 2px #333 inset
 }
