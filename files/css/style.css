@@ -1,7 +1,7 @@
 body {
     position: relative;
     overflow-x: hidden;
-    height: 3000px;
+    height: 1000px;
     font-family: cairo;
 }
 
@@ -17,33 +17,36 @@ section.allProducts .content {
     width: 90vw !important;
     margin: 50px auto;
 }
-
-.card-title {
-    color: #db0075;
-}
-.card-text {
-    color: #17E6E6;
-}
-.list-inline-item {
-    color: #ffd700
-}
-.price {
-    color: #9B1B30;
-}
-.btn-pink {
-    background-color: #fcb2b2 !important;
+#products {
+    display: grid;
+    gap: 10px;
+    grid-template-columns: repeat(12, 350px); 
+    overflow: hidden
 }
 
 .product {
-    transition: all .5s ease-in-out
+    transition: all .5s ease-in-out;
+    height: 480px;
+    padding: 0;
+    border-radius: 8px;
 }
 
+.product .card {
+    transition: all .5s ease-in-out;
+    height: 100%;
+    margin: 0;
+}
+.product .card .card-body {
+    position: absolute;
+    background-color: #fff;
+    bottom: 0
+}
 .card div.img {
     width: 100%;
-    height: 200px;
+    height: 250px;
     background-size: cover;
     background-repeat: no-repeat;
-    background-position: center;
+    background-position: top;
 }
 .card h5 {
     font-weight: bold;
